@@ -1,0 +1,6 @@
+{
+  "base": "https://www.lasmargaritas.com.ar",
+  "currency": "ARS",
+  "minStock": 10,
+  "excludeSkus": []
+}
