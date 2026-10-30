@@ -81,7 +81,7 @@ function toItems(products, cfg) {
       let title = multi && it.name && !p.productName.toLowerCase().includes(it.name.toLowerCase()) ? `${p.productName} - ${it.name}` : p.productName;
       items.push({
         id: String(it.itemId),
-        item_group_id: String(p.productId),
+        item_group_id: 'P' + p.productId,   // prefijo para no chocar con IDs de SKU
         title: title.slice(0, 200),
         description: (stripHtml(p.description) || title).slice(0, 9999),
         availability: inStock ? 'in stock' : 'out of stock',
