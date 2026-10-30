@@ -1,6 +1,6 @@
 name: Feed Meta
 on:
-  schedule: [{ cron: '7 * * * *' }]   # cada hora, minuto 7 (UTC)
+  schedule: [{ cron: '7 * * * *' }]   # pedido cada hora; GitHub lo corre aprox. cada 6 h (OK)
   workflow_dispatch:
 permissions: { contents: write, pages: write, id-token: write }
 concurrency: { group: feed, cancel-in-progress: false }
@@ -16,10 +16,11 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with: { path: public }
       - uses: actions/deploy-pages@v4
-      # Una vez por día guarda el reporte en el repo (mantiene activo el cron: GitHub lo apaga tras 60 días sin actividad)
+      # Primera corrida de cada día guarda el reporte en el repo (mantiene activo el cron: GitHub lo apaga tras 60 días sin actividad)
       - if: github.event.schedule && format('{0}', github.run_attempt) == '1'
         run: |
-          if [ "$(date -u +%H)" = "06" ]; then
+          LAST=$(git log -1 --format=%cs -- report-diario.json 2>/dev/null || echo none)
+          if [ "$LAST" != "$(date -u +%F)" ]; then
             git config user.name "feed-bot"; git config user.email "feed-bot@users.noreply.github.com"
             cp public/report.json report-diario.json && git add report-diario.json
             git commit -m "reporte diario $(date -u +%F)" && git push || true
