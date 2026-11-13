@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-12T02:51:57.973Z",
-  "products": 2427,
-  "skus_total": 5204,
-  "skus_in_feed": 5204,
-  "in_stock": 4225,
-  "out_of_stock": 979,
-  "unlimited_stock": 2226,
+  "generated_at": "2026-11-13T00:10:58.557Z",
+  "products": 2719,
+  "skus_total": 5548,
+  "skus_in_feed": 5548,
+  "in_stock": 4628,
+  "out_of_stock": 920,
+  "unlimited_stock": 2240,
   "excluded_no_price": 0,
   "excluded_no_image": 0,
-  "without_gtin": 5200,
-  "multi_variant_products": 250,
+  "without_gtin": 5544,
+  "multi_variant_products": 262,
   "links_not_main_domain": 0,
-  "seconds": 8
+  "seconds": 10
 }
