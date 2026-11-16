@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-11-15T01:48:05.893Z",
+  "generated_at": "2026-11-16T01:53:39.708Z",
   "products": 2723,
   "skus_total": 5552,
   "skus_in_feed": 5552,
-  "in_stock": 4631,
-  "out_of_stock": 921,
-  "unlimited_stock": 2236,
+  "in_stock": 4630,
+  "out_of_stock": 922,
+  "unlimited_stock": 2232,
   "excluded_no_price": 0,
   "excluded_no_image": 0,
   "without_gtin": 5548,
   "multi_variant_products": 262,
   "links_not_main_domain": 0,
-  "seconds": 15
+  "seconds": 10
 }
